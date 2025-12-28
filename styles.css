@@ -1,0 +1,625 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #888888;
+    --mollie-green: #0a0a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    position: relative;
+}
+
+.countdown-container {
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInDown 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.countdown-label {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.countdown-number {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.countdown-unit {
+    font-size: clamp(0.625rem, 1.2vw, 0.75rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 0.5rem;
+}
+
+.countdown-separator {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.main-title {
+    text-align: left;
+    max-width: 1200px;
+    width: 100%;
+    padding-left: 5vw;
+}
+
+.title-line {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 9vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.title-line:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.title-line:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.highlight-box {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 12px;
+    padding: 0.15em 0.4em;
+    margin-top: 0.1em;
+}
+
+.hero-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.date-info {
+    margin-top: 4rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1s;
+}
+
+.cta-button {
+    margin-top: 3rem;
+    padding: 1.25rem 3rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+/* About Section */
+.about-section {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.about-text {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+.sponsor-link {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.sponsor-link:hover {
+    opacity: 0.7;
+}
+
+/* Info Section */
+.info-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.info-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.info-card-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.info-card-link:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.info-card h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.info-detail {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--gray);
+    line-height: 1.5;
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.partners-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 3rem;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.partner-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.mollie-logo {
+    height: 35px;
+}
+
+.lovable-logo {
+    height: 28px;
+}
+
+.partner-ampersand {
+    font-size: 1.5rem;
+    color: var(--gray);
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+    .hero {
+        padding: 1.5rem;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .countdown-container {
+        margin-bottom: 2.5rem;
+    }
+
+    .countdown-item {
+        min-width: 55px;
+    }
+
+    .countdown-number {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    .countdown-separator {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .main-title {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .title-line {
+        font-size: clamp(2.2rem, 11vw, 4rem);
+    }
+
+    .highlight-box {
+        border-radius: 8px;
+        padding: 0.1em 0.3em;
+    }
+
+    .date-info {
+        margin-top: 2.5rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        margin-top: 2rem;
+        padding: 1rem 2.5rem;
+        font-size: 0.9rem;
+    }
+
+    .about-section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .info-section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .info-grid {
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1.75rem;
+    }
+
+    .info-card p {
+        font-size: 1.25rem;
+    }
+
+    .partners-section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .partners-logos {
+        gap: 1rem;
+    }
+
+    .mollie-logo {
+        height: 28px;
+    }
+
+    .lovable-logo {
+        height: 22px;
+    }
+
+    .partner-ampersand {
+        font-size: 1.25rem;
+    }
+
+    footer {
+        padding: 2rem 1.5rem;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .hero {
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 3rem;
+    }
+
+    .countdown-container {
+        margin-bottom: 2rem;
+    }
+
+    .countdown {
+        gap: 0.25rem;
+    }
+
+    .countdown-item {
+        min-width: 45px;
+    }
+
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+
+    .countdown-unit {
+        font-size: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    .countdown-separator {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .countdown-label {
+        font-size: 0.65rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .main-title {
+        padding: 0 0.5rem;
+    }
+
+    .title-line {
+        font-size: clamp(2rem, 12vw, 3rem);
+        line-height: 1.05;
+    }
+
+    .highlight-box {
+        border-radius: 6px;
+        padding: 0.08em 0.25em;
+    }
+
+    .date-info {
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .cta-button {
+        margin-top: 1.5rem;
+        padding: 0.9rem 2rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+    }
+
+    .about-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .info-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .info-card p {
+        font-size: 1.1rem;
+    }
+
+    .info-detail {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    .partners-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .partners-label {
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .partners-logos {
+        gap: 0.75rem;
+    }
+
+    .mollie-logo {
+        height: 24px;
+    }
+
+    .lovable-logo {
+        height: 18px;
+    }
+
+    .partner-ampersand {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    footer p {
+        font-size: 0.7rem;
+        line-height: 1.5;
+    }
+}
+
+/* Subtle background animation */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
