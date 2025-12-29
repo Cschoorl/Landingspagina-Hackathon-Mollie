@@ -366,6 +366,8 @@ footer a:hover {
         padding: 1.5rem;
         min-height: 100vh;
         min-height: 100dvh;
+        justify-content: center;
+        align-items: center;
     }
 
     .countdown-container {
@@ -388,6 +390,9 @@ footer a:hover {
     .main-title {
         text-align: center;
         padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .title-line {
@@ -471,9 +476,11 @@ footer a:hover {
 /* Responsive - Mobile */
 @media (max-width: 480px) {
     .hero {
-        padding: 1rem;
-        justify-content: flex-start;
-        padding-top: 3rem;
+        padding: 1.5rem 1rem;
+        min-height: 100vh;
+        min-height: 100dvh;
+        justify-content: center;
+        align-items: center;
     }
 
     .countdown-container {
@@ -481,19 +488,19 @@ footer a:hover {
     }
 
     .countdown {
-        gap: 0.25rem;
+        gap: 0.35rem;
     }
 
     .countdown-item {
-        min-width: 45px;
+        min-width: 50px;
     }
 
     .countdown-number {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
     .countdown-unit {
-        font-size: 0.5rem;
+        font-size: 0.55rem;
         margin-top: 0.25rem;
     }
 
@@ -503,54 +510,68 @@ footer a:hover {
     }
 
     .countdown-label {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         margin-bottom: 0.75rem;
     }
 
     .main-title {
-        padding: 0 0.5rem;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .title-line {
-        font-size: clamp(2rem, 12vw, 3rem);
+        font-size: clamp(2.25rem, 13vw, 3.5rem);
         line-height: 1.05;
+        text-align: center;
     }
 
     .highlight-box {
-        border-radius: 6px;
-        padding: 0.08em 0.25em;
+        border-radius: 8px;
+        padding: 0.1em 0.3em;
     }
 
-    .date-info {
-        margin-top: 2rem;
-        font-size: 0.9rem;
+    .hero-center {
+        width: 100%;
         padding: 0 1rem;
     }
 
+    .date-info {
+        margin-top: 2.5rem;
+        font-size: 0.95rem;
+        padding: 0;
+        text-align: center;
+        line-height: 1.4;
+    }
+
     .cta-button {
-        margin-top: 1.5rem;
-        padding: 0.9rem 2rem;
-        font-size: 0.85rem;
+        margin-top: 1.75rem;
+        padding: 1rem 2.25rem;
+        font-size: 0.875rem;
         letter-spacing: 0.08em;
+        width: auto;
     }
 
     .about-section {
-        padding: 2.5rem 1.25rem;
+        padding: 3rem 1.25rem;
+        text-align: left;
     }
 
     .section-title {
         font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .about-text {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        line-height: 1.65;
         margin-bottom: 1rem;
     }
 
     .info-section {
-        padding: 2.5rem 1.25rem;
+        padding: 3rem 1.25rem;
     }
 
     .info-grid {
@@ -560,6 +581,7 @@ footer a:hover {
 
     .info-card {
         padding: 1.5rem;
+        text-align: left;
     }
 
     .info-card h3 {
@@ -572,12 +594,12 @@ footer a:hover {
     }
 
     .info-detail {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         margin-top: 0.5rem;
     }
 
     .partners-section {
-        padding: 2.5rem 1.25rem;
+        padding: 3rem 1.25rem;
     }
 
     .partners-label {
@@ -586,15 +608,15 @@ footer a:hover {
     }
 
     .partners-logos {
-        gap: 0.75rem;
+        gap: 1rem;
     }
 
     .mollie-logo {
-        height: 24px;
+        height: 26px;
     }
 
     .lovable-logo {
-        height: 18px;
+        height: 20px;
     }
 
     .partner-ampersand {
@@ -602,12 +624,40 @@ footer a:hover {
     }
 
     footer {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1.25rem;
     }
 
     footer p {
-        font-size: 0.7rem;
-        line-height: 1.5;
+        font-size: 0.75rem;
+        line-height: 1.6;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    .countdown-item {
+        min-width: 42px;
+    }
+
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+
+    .countdown-separator {
+        font-size: 1rem;
+    }
+
+    .title-line {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .date-info {
+        font-size: 0.85rem;
+    }
+
+    .cta-button {
+        padding: 0.9rem 1.75rem;
+        font-size: 0.8rem;
     }
 }
 
